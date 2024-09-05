@@ -14,5 +14,21 @@
       </a-entity>
  
     </a-scene>
+    <script>  
+      // Esperar a que el documento esté completamente cargado  
+      document.addEventListener('DOMContentLoaded', function () {  
+        const video = document.getElementById('vid');  
+
+        // Añadir el evento touchstart al video  
+        document.addEventListener('touchstart', function () {  
+          if (video.isPlaying) {  
+            video.pause();  
+          } else {  
+            video.play();  
+          }  
+          video.isPlaying = !video.isPlaying; // Alternar el estado de reproducción  
+        });  
+      });  
+    </script>  
   </body>
 </html>
